@@ -6,6 +6,7 @@ const config = require ('./config');
 
 
 const allowCrossDomain = (req, res, next) => {
+
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
     res.header('Access-Control-Allow-Headers', '*');
@@ -24,7 +25,7 @@ const checkAuthentication = (req, res, next) => {
     // check header or url parameters or post parameters for token
     let token = ""
     if(req.headers.authorization) {
-        token = req.headers.authorization.substring(4);
+        token = req.headers.authorization.substring(7);
     }
 
     if (!token)

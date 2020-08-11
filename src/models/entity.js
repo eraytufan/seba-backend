@@ -6,13 +6,19 @@ const mongoose = require("mongoose");
 const EntitySchema = new mongoose.Schema({
   owner: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
+    ref: "Customer",
+  },
+  name: {
+    type: String,
   },
   description: {
     type: String,
   },
   images: {
     type: [String],
+  },
+  category: {
+    type: String,
   },
   breed: {
     type: String,

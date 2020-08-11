@@ -9,13 +9,13 @@ const ReviewSchema  = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Offer'
   },
-  owner: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
-  },
   caretaker: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
+    ref: 'Customer'
+  },
+  createdBy: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Customer'
   },
   text: {
     type: String,
